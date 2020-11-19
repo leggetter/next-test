@@ -3,8 +3,11 @@ import useInterval from '../lib/useInterval'
 import Clock from './clock'
 import Counter from './counter'
 import Nav from './nav'
+import Head from 'next/head'
 
-export default function Page() {
+import { ChakraProvider } from "@chakra-ui/react"
+
+export default function Page({title, description}) {
   const dispatch = useDispatch()
 
   // Tick the time every second
@@ -17,10 +20,14 @@ export default function Page() {
   }, 1000)
 
   return (
-    <>
+    <ChakraProvider>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Head>
       <Nav />
       <Clock />
       <Counter />
-    </>
+    </ChakraProvider>
   )
 }

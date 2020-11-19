@@ -2,7 +2,7 @@ import Page from '../components/page'
 import { initializeStore } from '../store'
 
 export default function SSR() {
-  return <Page />
+  return <Page title="SSR page" description="SSR page description" />
 }
 
 // The date returned here will be different for every request that hits the page,

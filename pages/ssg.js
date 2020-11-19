@@ -1,7 +1,7 @@
 import Page from '../components/page'
 
 export default function SSG() {
-  return <Page />
+  return <Page title="SSG page" description="SSG page description" />
 }
 
 // If you build and start the app, the date returned here will have the same
